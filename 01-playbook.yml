@@ -1,0 +1,16 @@
+---
+- name: Install k8s tools
+  hosts: all
+  tasks:
+    - name: Install AWS CLI
+      yum: name=awscli state=present
+    - name: Install kubectl
+      get_url:
+        url: https://dl.k8s.io/release/v1.27.3/bin/linux/amd64/kubectl
+        dest: /usr/local/bin/kubectl
+        mode: '0755'
+    - name: Install kops
+      get_url:
+        url: https://github.com/kubernetes/kops/releases/download/v1.27.3/kops-linux-amd64
+        dest: /usr/local/bin/kops
+        mode: '0755'

@@ -1,0 +1,13 @@
+---
+- name: Initialize Kubernetes Master Node
+  hosts: master
+  become: true
+  tasks:
+    - name: Initialize Kubernetes
+      command: "kubeadm init --pod-network-cidr=10.244.0.0/16"
+      register: init_output
+    - name: Save kubeconfig
+      copy:
+        content: "{{ lookup('file', '/etc/kubernetes/admin.conf') }}"
+        dest: "~/.kube/config"
+        mode: "0600"
