@@ -1,6 +1,6 @@
 ---
 - name: Initialize Kubernetes Master Node
-  hosts: master
+  hosts: g2
   become: true
   tasks:
     - name: Initialize Kubernetes

@@ -1,6 +1,6 @@
 ---
 - name: Install k8s tools
-  hosts: all
+  hosts: g2
   tasks:
     - name: Install AWS CLI
       yum: name=awscli state=present
