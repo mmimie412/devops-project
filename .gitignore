@@ -44,7 +44,7 @@ local.properties
 # STS (Spring Tool Suite)
 .springBeans
 
-# Code Recommenders
+# Code Recommenders:
 .recommenders/
 
 # Scala IDE specific (Scala & Java development for Eclipse)
